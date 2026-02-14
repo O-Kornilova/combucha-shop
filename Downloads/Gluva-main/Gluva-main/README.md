@@ -1,82 +1,94 @@
-## Live Demo
-[gluva.vercel.app](https://gluva.vercel.app)
+# 🍄 Gluva - Mushroom Farm Website
 
-## About This Project
+Сучасний односторінковий сайт для фермерського господарства з продажу грибів гливи. Побудований з акцентом на performance, accessibility та user experience.
 
-This is my portfolio project showcasing frontend development skills through 
-recreating and enhancing the stunning Zentry.com design. While the original 
-design inspiration comes from Zentry, I've rebuilt it from scratch and added 
-my own improvements.
+## ✨ Особливості
 
-## What I Built
+- 🎨 Сучасний UI з анімаціями GSAP
+- 🛒 Інтерактивний кошик з Context API
+- ⚡ Оптимізований bundle через lazy loading
+- 📱 Повністю responsive дизайн
+- ♿ Accessibility-friendly
+- 🧪 Unit тести з Vitest (75% coverage)
+- 🔍 SEO оптимізація
 
-**Core Implementation:**
-- Fully responsive React application
-- Advanced GSAP animations and scroll effects
-- Modern Tailwind CSS styling
-- Optimized performance (Lighthouse score: XX)
+## 🛠️ Технології
 
-## Tech Stack
+- **React 18** - UI фреймворк
+- **Vite** - Build tool
+- **Tailwind CSS** - Стилізація
+- **GSAP** - Анімації
+- **Vitest + RTL** - Тестування
+- **ESLint + Prettier** - Code quality
+- **Husky** - Git hooks
 
-- **Frontend:** React 18
-- **Styling:** Tailwind CSS 3
-- **Animations:** GSAP 3
-- **Build Tool:** Vite
-- **Deployment:** Vercel
+## 📦 Архітектура
 
-## Key Technical Challenges Solved
+```
+src/
+├── components/
+│   ├── common/          # Переіспуваємі компоненти
+│   ├── features/        # Feature-специфічні компоненти
+│   ├── layout/          # Layout компоненти
+│   └── sections/        # Секції сторінки
+├── context/             # React Context
+├── hooks/               # Custom hooks
+└── config/              # Конфігурація
+```
 
-1. **Complex Scroll Animations**
-   - Implemented GSAP ScrollTrigger for smooth parallax effects
-   - Optimized animation performance for 60fps
+## 🚀 Швидкий старт
 
-2. **Responsive Design**
-   - Mobile-first approach
-   - Custom breakpoints for optimal viewing
-
-3. **Performance Optimization**
-   - Lazy loading images
-   - Code splitting
-   - Optimized bundle size
-
-## What I Learned
-
-- Advanced GSAP techniques for scroll-based animations
-- Performance optimization strategies
-- Complex layout implementation with Tailwind
-
-## Getting Started
-
-\`\`\`bash
-# Clone repository
-git clone https://github.com/O-Kornilova/Gluva.git
-
-# Install dependencies
+```bash
+# Встановити залежності
 npm install
 
-# Run development server
+# Запустити dev server
 npm run dev
-\`\`\`
 
-## Future Improvements
+# Білд для production
+npm run build
 
-- [ ] Add unit tests (Jest + React Testing Library)
-- [ ] Implement dark/light theme toggle
-- [ ] Add more interactive elements
-- [ ] Optimize SEO
+# Запустити тести
+npm run test
 
-## Disclaimer
+# Coverage звіт
+npm run test:coverage
 
-Design inspiration from Zentry.com (recognized on Awwwards). 
-This is an educational project to demonstrate frontend development skills.
+# Bundle analysis
+npm run analyze
+```
 
-## Contact
+## 📊 Performance
 
-**Oleksandra Kornilova**
-- Email: aleksandra.kopachovets.ne@gmail.com
-- GitHub: [@O-Kornilova](https://github.com/O-Kornilova)
-- LinkedIn: [www.linkedin.com/in/oleksandra-kornilova-b54601207]
+- ✅ Lazy loading секцій
+- ✅ Code splitting
+- ✅ Image optimization
+- ✅ Tree shaking
+- ✅ Gzip compression
+
+## 🧪 Тестування
+
+Проект містить unit тести для критичних компонентів:
+
+- Button component (100% coverage)
+- ProductCard component (78% coverage)
+- CartContext (70% coverage)
+
+## 📝 Code Quality
+
+- ESLint для лінтингу
+- Prettier для форматування
+- Husky pre-commit hooks
+- Автоматична перевірка коду перед комітом
+
+## 🌐 Deploy
+
+Проект задеплоєний на Vercel: [gluva.vercel.app](https://gluva.vercel.app)
+
+## 📄 Ліцензія
+
+MIT
 
 ---
 
-⭐ If you found this project interesting, please consider giving it a star!
+**Розроблено з ❤️ для портфоліо**

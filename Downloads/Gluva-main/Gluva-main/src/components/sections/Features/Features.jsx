@@ -7,13 +7,13 @@ const BentoTilt = ({ children, className = '' }) => {
   const [transformStyle, setTransformStyle] = useState('')
   const itemRef = useRef()
 
-  const handleMouseMove = e => {
+  const handleMouseMove = _e => {
     if (!itemRef.current) return
 
     const { left, top, width, height } = itemRef.current.getBoundingClientRect()
 
-    const relativeX = (e.clientX - left) / width
-    const relativeY = (e.clientX - top) / height
+    const relativeX = (_e.clientX - left) / width
+    const relativeY = (_e.clientX - top) / height
 
     const tiltX = (relativeY - 0.5) * 5
     const tiltY = (relativeX - 0.5) * -5
