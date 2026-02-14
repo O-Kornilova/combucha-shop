@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "analyze": "vite build --mode analyze",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{js,jsx,json,css,md}\"",
     "prepare": "husky"
   },
   "dependencies": {
