@@ -32,7 +32,7 @@ describe('ProductCard', () => {
   it('increases quantity when + button clicked', () => {
     renderWithCart(<ProductCard {...mockProduct} />)
 
-    const increaseButton = screen.getByText('+')
+    const increaseButton = screen.getByLabelText('Збільшити кількість')
     fireEvent.click(increaseButton)
 
     expect(screen.getByText('1 кг')).toBeInTheDocument()
@@ -41,10 +41,10 @@ describe('ProductCard', () => {
   it('decreases quantity when - button clicked', () => {
     renderWithCart(<ProductCard {...mockProduct} />)
 
-    const increaseButton = screen.getByText('+')
+    const increaseButton = screen.getByLabelText('Збільшити кількість')
     fireEvent.click(increaseButton)
 
-    const decreaseButton = screen.getByText('−')
+    const decreaseButton = screen.getByLabelText('Зменшити кількість')
     fireEvent.click(decreaseButton)
 
     expect(screen.getByText('0.5 кг')).toBeInTheDocument()
@@ -53,7 +53,7 @@ describe('ProductCard', () => {
   it('disables decrease button at minimum quantity', () => {
     renderWithCart(<ProductCard {...mockProduct} />)
 
-    const decreaseButton = screen.getByText('−')
+    const decreaseButton = screen.getByLabelText('Зменшити кількість')
     expect(decreaseButton).toBeDisabled()
   })
 
