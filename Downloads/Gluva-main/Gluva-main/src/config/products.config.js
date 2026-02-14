@@ -6,7 +6,7 @@ export const PRODUCTS = [
     currency: '₴',
     description: 'Найсвіжіші фермерські гливи',
     image: '/img/mushroom-recipe.jpg',
-    isVideo: false
+    isVideo: false,
   },
   {
     id: 'dried-oyster',
@@ -15,6 +15,6 @@ export const PRODUCTS = [
     currency: '₴',
     description: 'Довгий термін зберігання',
     image: '/img/mushroom2.jpg',
-    isVideo: false
-  }
+    isVideo: false,
+  },
 ]

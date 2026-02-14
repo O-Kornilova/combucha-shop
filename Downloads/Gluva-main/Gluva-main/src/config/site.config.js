@@ -5,6 +5,6 @@ export const SITE_CONFIG = {
   url: 'https://gluva.vercel.app',
   author: {
     name: 'Oleksandra Kornilova',
-    email: 'aleksandra.kopachovets.ne@gmail.com'
-  }
+    email: 'aleksandra.kopachovets.ne@gmail.com',
+  },
 }

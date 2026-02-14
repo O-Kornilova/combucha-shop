@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { useCart } from '../../../context/CartContext'
 
-const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = false, onOrder }) => {
-  const [quantity, setQuantity] = useState(0.5) // початкова кількість 500г
+const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = false }) => {
+  const { addToCart } = useCart()
+  const [quantity, setQuantity] = useState(0.5)
 
-  // Функція для визначення типу медіа
   const detectMediaType = (src) => {
     if (!src) return false
     const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi']
@@ -12,7 +13,6 @@ const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = fals
 
   const shouldShowVideo = isVideo !== undefined ? isVideo : detectMediaType(src)
 
-  // Функції для зміни кількості
   const increaseQuantity = () => {
     setQuantity((prev) => prev + 0.5)
   }
@@ -23,25 +23,12 @@ const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = fals
     }
   }
 
-  // Розрахунок загальної ціни
   const totalPrice = (quantity * pricePerKg).toFixed(0)
 
-  // Функція замовлення
   const handleOrder = () => {
-    const orderData = {
-      title: typeof title === 'string' ? title : 'Свіжі гливи',
-      quantity,
-      pricePerKg,
-      totalPrice: parseFloat(totalPrice),
-    }
-
-    if (onOrder) {
-      onOrder(orderData)
-    } else {
-      alert(
-        `Замовлення:\n${orderData.title}\nКількість: ${quantity} кг\nДо сплати: ${totalPrice} ₴`,
-      )
-    }
+    const product = { id: title, name: title, pricePerKg }
+    addToCart(product, quantity)
+    alert(`Додано в кошик: ${quantity} кг`)
   }
 
   return (
@@ -62,11 +49,9 @@ const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = fals
         />
       )}
 
-      {/* Затемнення для кращої читабельності */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
 
       <div className="relative z-10 flex size-full flex-col justify-between p-5 text-blue-50">
-        {/* Верхня частина з назвою та описом */}
         <div>
           <h1 className="bento-title special-font">{title}</h1>
           {description && (
@@ -74,14 +59,11 @@ const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = fals
           )}
         </div>
 
-        {/* Нижня частина з ціною та контролами */}
         <div className="space-y-4">
-          {/* Ціна за кг */}
           <div className="text-right">
             <span className="text-sm opacity-75">{pricePerKg} ₴/кг</span>
           </div>
 
-          {/* Контроли кількості */}
           <div className="flex items-center justify-between bg-black bg-opacity-50 rounded-lg p-3 backdrop-blur-sm">
             <button
               onClick={decreaseQuantity}
@@ -104,7 +86,6 @@ const ProductCard = ({ src, title, description, pricePerKg = 120, isVideo = fals
             </button>
           </div>
 
-          {/* Загальна ціна та кнопка замовлення */}
           <div className="flex items-center justify-between bg-black bg-opacity-50 rounded-lg p-3 backdrop-blur-sm">
             <div>
               <div className="text-lg font-bold text-green-400">{totalPrice} ₴</div>

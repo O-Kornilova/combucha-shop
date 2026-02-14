@@ -14,28 +14,28 @@ const About = () => {
         end: '+=800 center',
         scrub: 0.5,
         pin: true,
-        pinSpacing: true
-      }
+        pinSpacing: true,
+      },
     })
 
     clipAnimation.to('.mask-clip-path', {
       width: '100vw',
       height: '100vh',
-      borderRadius: 0
+      borderRadius: 0,
     })
   })
 
   return (
-    <div id='about' className='min-h-screen w-screen'>
-      <div className='relative mb-8 mt-36 flex flex-col items-center gap-5'>
-        <h2 className='font-general text-sm uppercase md:text-[10px]'>Вітаємо на нашій фермі</h2>
+    <div id="about" className="min-h-screen w-screen">
+      <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
+        <h2 className="font-general text-sm uppercase md:text-[10px]">Вітаємо на нашій фермі</h2>
 
         <AnimatedTitle
-          title='Найсвіжіші <b>гливи</b> ТУТ'
-          containerClass='mt-5 !text-black text-center'
+          title="Найсвіжіші <b>гливи</b> ТУТ"
+          containerClass="mt-5 !text-black text-center"
         />
 
-        <div className='about-subtext'>
+        <div className="about-subtext">
           {/* <p>Найсвіжіші гриби тут</p> */}
           <p>
             Ми вирощуємо екологічно чисті гливи на власній фермі, використовуючи лише натуральні
@@ -43,12 +43,12 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className='h-dvh w-screen' id='clip'>
-        <div className='mask-clip-path about-image'>
+      <div className="h-dvh w-screen" id="clip">
+        <div className="mask-clip-path about-image">
           <img
-            src='img/about.webp'
-            alt='Background'
-            className='absolute left-0 top-0 size-full object-cover'
+            src="img/about.webp"
+            alt="Background"
+            className="absolute left-0 top-0 size-full object-cover"
           />
         </div>
       </div>
