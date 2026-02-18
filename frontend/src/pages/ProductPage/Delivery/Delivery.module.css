@@ -1,0 +1,73 @@
+.section {
+  margin: 16px 0;
+  border-radius: 18px;
+  background-color: #fcfeff;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+}
+
+.header div:first-of-type {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header div:last-of-type {
+  font-family: 'Nunito';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.header div:last-of-type span {
+  color: #fe1468;
+}
+
+.info {
+  margin-top: 16px;
+  border-top: 2px solid #dee2e6;
+  padding: 16px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info__line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__line .left {
+  display: flex;
+  flex: 1;
+  gap: 5px;
+}
+
+.info__line .left img {
+  width: 24px;
+  height: 24px;
+}
+
+.info__line .right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.info__line .right p {
+  margin: 0;
+}
+
+.info__line .right p:first-of-type {
+  font-family: 'Nunito';
+  color: #343a40;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.info__line .right p:last-of-type {
+  font-size: 14px;
+  color: #868e96;
+}

@@ -1,0 +1,50 @@
+.Taste {
+  font-family: 'Bowlby One', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fe1468;
+  font-size: 52px;
+  line-height: 62.4px;
+  background-color: #ffb6d0;
+  height: 96px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  white-space: nowrap;
+}
+.taste {
+  font-family: 'Bowlby One', serif;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fe1468;
+  font-size: 52px;
+  line-height: 62.4px;
+  background-color: #ffb6d0;
+  height: 96px;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.track-content {
+  flex-shrink: 0;
+  font-weight: bold;
+  margin-right: 3rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

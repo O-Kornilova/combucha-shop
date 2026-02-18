@@ -1,0 +1,17 @@
+.homeButton {
+  /* margin-top: 24px; */
+  color: #fcfeff;
+  font-size: 18px;
+  font-weight: 700;
+  width: 169px;
+  height: 48px;
+  background-color: #fe1468;
+  border-radius: 24px;
+  border: none;
+  z-index: 10;
+  position: relative;
+}
+
+.homeButton:hover {
+  background-color: #e1125b;
+}
