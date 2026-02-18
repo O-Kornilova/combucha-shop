@@ -1,0 +1,151 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Комбуча Класична",
+      "volume": 0.5,
+      "price": 75,
+      "currency": "UAH",
+      "image": "/prod/image_14.png",
+      "description": "Класична комбуча зі збалансованим смаком.",
+      "color": "#e26bc7",
+      "sale": 0.12,
+      "taste": [
+        "original"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Комбуча Імбир-Лимон",
+      "volume": 0.7,
+      "price": 95,
+      "currency": "UAH",
+      "image": "/prod/image_15.png",
+      "description": "Освіжаюча комбуча з імбирем і лимоном.",
+      "color": "#004fff",
+      "sale": 0.08,
+      "taste": [
+        "ginger",
+        "lemon"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Комбуча Ягідний Мікс",
+      "volume": 0.3,
+      "price": 60,
+      "currency": "UAH",
+      "image": "/prod/image_16.png",
+      "description": "Фруктова комбуча з міксом ягід.",
+      "color": "#61d70e",
+      "sale": 0.19,
+      "taste": [
+        "berry",
+        "raspberry",
+        "blueberry"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Комбуча Зелений Чай",
+      "volume": 0.5,
+      "price": 80,
+      "currency": "UAH",
+      "image": "/prod/image_17.png",
+      "description": "Комбуча на основі зеленого чаю.",
+      "color": "#ebde6a",
+      "sale": 0.05,
+      "taste": [
+        "green tea"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Комбуча Манго-Маракуйя",
+      "volume": 0.7,
+      "price": 99,
+      "currency": "UAH",
+      "image": "/prod/image_18.png",
+      "description": "Екзотична комбуча з манго та маракуйєю.",
+      "color": "#0F763C",
+      "sale": 0.17,
+      "taste": [
+        "mango",
+        "passion fruit"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Комбуча Чорний Чай",
+      "volume": 0.3,
+      "price": 55,
+      "currency": "UAH",
+      "image": "/prod/image_19.png",
+      "color": "#ff5716",
+      "description": "Класична комбуча на чорному чаї.",
+      "sale": 0.03,
+      "taste": [
+        "black tea"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Комбуча Апельсин-Кориця",
+      "volume": 0.5,
+      "price": 85,
+      "currency": "UAH",
+      "image": "/prod/image_20.png",
+      "description": "Ароматна комбуча з нотками апельсина і кориці.",
+      "color": "#ff7600",
+      "sale": 0.14,
+      "taste": [
+        "orange",
+        "cinnamon"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Комбуча Лаванда-Чорниця",
+      "volume": 0.7,
+      "price": 98,
+      "currency": "UAH",
+      "image": "/prod/image_21.png",
+      "description": "Вишукана комбуча з лавандою та чорницею.",
+      "color": "#ff4200",
+      "sale": 0.09,
+      "taste": [
+        "lavender",
+        "blueberry"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Комбуча Тропічний Мікс",
+      "volume": 0.3,
+      "price": 65,
+      "currency": "UAH",
+      "image": "/prod/image_22.png",
+      "description": "Яскравий мікс тропічних фруктів у комбучі.",
+      "sale": 0.11,
+      "taste": [
+        "pineapple",
+        "coconut"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Комбуча М'ята-Лайм",
+      "volume": 0.5,
+      "price": 90,
+      "currency": "UAH",
+      "image": "/prod/image_23.png",
+      "description": "Освіжаючий смак м'яти та лайму.",
+      "color": "#ff4200",
+      "sale": 0.16,
+      "taste": [
+        "mint",
+        "lime"
+      ]
+    }
+  ]
+}

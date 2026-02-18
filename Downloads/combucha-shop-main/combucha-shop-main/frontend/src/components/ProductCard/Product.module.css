@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Bowlby+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap");
+@import url("https://uk.allfont.net/allfont.css?fonts=bowlby-one");
+
+.list {
+  padding: 20px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.wrapper {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 410px);
+}
+a {
+  text-decoration: none;
+}
+.section {
+  padding: 2rem 1rem;
+  background-color: #fcfeff;
+  border-radius: 0.85rem;
+  display: flex;
+  flex-direction: column;
+}
+.product {
+  background-color: #fcfeff;
+  /* margin-bottom: 2rem; */
+  width: 100%;
+  box-shadow: 0.0029044048860669136px -0.08501984924077988px 14.166666984558105px -273px
+      #0616220f,
+    -0.5204693675041199px 15.235556602478027px 83.33333587646484px -273px
+      #06162204,
+    -1.4272245168685913px 41.77875518798828px 180px -273px #06162200,
+    -2.5744643211364746px 75.3615951538086px 276.6666564941406px -273px
+      #06162200,
+    -3.8192923069000244px 111.80110168457031px 345.8333435058594px -273px
+      #06162200,
+    -5.0188117027282715px 146.914306640625px 360px -273px #06162200;
+  padding: 25px 22px;
+  border-radius: 24px;
+  border: 2px solid #273b750f;
+}
+
+.sectionTitle {
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-family: "Bowlby One", arial;
+  font-size: 2rem;
+  color: #343a40;
+  line-height: 1.2;
+}
+
+.sectionTitlePink {
+  font-family: "Bowlby One", arial;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #343a40;
+  line-height: 1.2;
+  padding-bottom: 24px;
+  color: #fe1468;
+  margin-right: auto;
+  /* padding-left: 1rem; */
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+.text {
+  display: flex;
+  justify-content: end;
+  padding-top: 1rem;
+}
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* .product:nth-child(5n) {
+  width: calc(100% / 5);
+} */
+
+.image {
+  width: 100%;
+  height: 216px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-decoration: none;
+  color: #343a40;
+  padding-top: 16px;
+  text-transform: uppercase;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    #fafbfc 0%,
+    #f5faff 74.97%,
+    #e9edf2 96.39%
+  );
+  height: 297px;
+  border-radius: 24px;
+  padding: 1rem;
+}
+.applauseMain {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.5rem;
+  padding: 15px;
+  justify-content: space-between;
+}
+.applause {
+  display: flex;
+  flex-direction: row;
+}
+.rating {
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+  font-size: 1.125rem;
+  color: #868e96;
+  font-weight: 400;
+}
+svg {
+  height: 22px;
+  margin: 5px;
+}
+.attribute {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 6px;
+}
+.addattribute {
+  padding-bottom: 1rem;
+}
+.filters {
+  padding: 0 20px;
+}
+.filter {
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: #868e96;
+  padding-right: 15px;
+}
+.filters_group {
+  display: flex;
+  flex-direction: row;
+}
+.filters_item {
+  padding-right: 0.5rem;
+  color: #868e96;
+  font-weight: 700;
+}
+
+.filterAtt {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.125;
+  line-height: 1.125;
+  color: var(--grey);
+  text-transform: uppercase;
+  /* margin-top: 6px;
+  margin-bottom: 28px; */
+  color: #495057;
+}
+
+.info {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1.6px solid #e9edf2;
+  padding-top: 1rem;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--violet-dark);
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration-line: line-through;
+  color: #adb5bd;
+}
+
+.applause {
+  display: flex;
+  flex-direction: row;
+  color: var(--dark-sea);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+}
+.buttons_links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.buttons_links a {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+.buttons_links a button {
+  width: 100%;
+}
+a {
+  display: block;
+}
+.color {
+  width: 100%;
+  position: relative;
+  top: 10px;
+  left: -40px;
+  width: 150px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  padding: 5px 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+}
+.sale {
+  color: white;
+}

@@ -1,0 +1,27 @@
+/* MainSlider.module.css */
+.mainSliderBack {
+  height: 343px;
+  position: relative;
+  background-color: #f0f5fa;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.sale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 36px;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  transform: rotate(-45deg) translate(-70px);
+  z-index: 3;
+}

@@ -1,0 +1,82 @@
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0;
+  width: 100%;
+  position: relative;
+}
+
+.item.left {
+  justify-content: flex-start;
+}
+
+.item.right {
+  justify-content: flex-end;
+}
+
+.bubble {
+  background-size: 40% 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  margin-bottom: 1rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.content {
+  padding: 0 1rem;
+  border-radius: 10px;
+  max-width: 300px;
+  position: relative;
+}
+
+.item.left .bubble {
+  margin-right: auto;
+}
+
+.item.right .bubble {
+  margin-left: auto;
+}
+
+/* Альтернативний варіант - якщо потрібно зображення лише ліворуч для всіх елементів */
+.item.right .bubble {
+  margin-left: auto;
+  background-position: left center; /* Все одно ліворуч */
+}
+/* Стиль 1: Для першого TimelineItem */
+.style1Title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.style1Text {
+  font-size: 16px;
+  color: #264653;
+}
+/* Стиль 2: Для першого TimelineItem */
+.style2Title {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 24px;
+  color: black;
+  font-weight: 600;
+  margin: 0;
+  max-width: 250px;
+}
+
+.style2Text {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
+  margin-top: 0.8rem;
+}

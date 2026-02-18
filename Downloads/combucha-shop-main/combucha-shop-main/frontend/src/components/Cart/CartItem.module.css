@@ -1,0 +1,83 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cartImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.cartDetails {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 30px;
+}
+.productName {
+  max-width: 250px;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.totalText {
+  font-weight: bold;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+}
+.incBtn,
+.decBtn {
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0;
+  border-width: 2px;
+  background-color: #fff;
+  border-color: #fe1468;
+  color: #fe1468;
+  border-radius: 50%;
+}
+
+.incBtn:disabled {
+  opacity: 0.4;
+  border-color: #787878;
+}
+
+.incBtn:disabled svg path {
+  fill: #787878;
+}
+
+.incBtn svg {
+  path:first-of-type {
+    display: none;
+  }
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.removeBtn img {
+  width: 20px;
+  height: 20px;
+}
