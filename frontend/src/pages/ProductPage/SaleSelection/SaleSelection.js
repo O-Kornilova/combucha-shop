@@ -82,7 +82,7 @@ const SaleSelection = ({ product }) => {
             </div>
             <div className={styles.priceRating_right__button}>
               <button>
-                <img src='./img/claps.svg' alt='Claps' />
+                <img src='/img/claps.svg' alt='Claps' />
               </button>
             </div>
           </div>
@@ -200,7 +200,7 @@ const SaleSelection = ({ product }) => {
           </div>
           <div className={styles.section_size__count__button}>
             <button onClick={handleAddToCart} disabled={!product.inStock}>
-              <img src='./img/shopping_cart_one.svg' alt='Shopping cart' />
+              <img src='/img/shopping_cart_one.svg' alt='Shopping cart' />
               Add to cart - ${totalPrice}
             </button>
           </div>

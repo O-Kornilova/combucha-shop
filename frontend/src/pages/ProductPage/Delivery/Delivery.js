@@ -13,7 +13,7 @@ const Delivery = () => {
       <div className={styles.info}>
         <div className={styles.info__line}>
           <div className={styles.left}>
-            <img src='./img/delivery.svg' alt='delivery' />
+            <img src='/img/delivery.svg' alt='delivery' />
             Courier delivery
           </div>
           <div className={styles.right}>
@@ -23,7 +23,7 @@ const Delivery = () => {
         </div>
         <div className={styles.info__line}>
           <div className={styles.left}>
-            <img src='./img/box.svg' alt='box' />
+            <img src='/img/box.svg' alt='box' />
             Self-delivery from postal operator offices
           </div>
           <div className={styles.right}>
