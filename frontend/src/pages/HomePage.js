@@ -22,7 +22,7 @@ function HomePage () {
         setProducts(data)
         setLoading(false)
       } catch (error) {
-        console.error('Ошибка при получении продуктов:', error)
+        console.error('Помилка при отриманні продуктів:', error)
         setLoading(false)
       }
     }
@@ -30,7 +30,7 @@ function HomePage () {
     fetchProducts()
   }, [])
 
-  if (loading) return <p>Загрузка продуктов...</p>
+  if (loading) return <p>Загрузка продуктів...</p>
 
   return (
     <div>
