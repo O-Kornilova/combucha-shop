@@ -7,6 +7,7 @@ import Delivery from './Delivery/Delivery'
 import SmalSlider from './SmalSlider/SmalSlider'
 import API_BASE_URL from '../../utils/config'
 import styles from './ProductPage.module.css'
+/* eslint-disable no-unused-vars */
 
 function ProductPage () {
   const { id } = useParams()
