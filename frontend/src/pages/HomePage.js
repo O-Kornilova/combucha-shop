@@ -30,7 +30,26 @@ function HomePage () {
     fetchProducts()
   }, [])
 
-  if (loading) return <p>Загрузка продуктів...</p>
+  if (loading)
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '50vh',
+          gap: '20px'
+        }}
+      >
+        <div className='spinner'></div>
+        <p>Loading products...</p>
+        <p style={{ fontSize: '14px', color: '#666' }}>
+          ⏳ Backend is warming up (free tier) — usually takes 30-60 seconds on
+          first load
+        </p>
+      </div>
+    )
 
   return (
     <div>
