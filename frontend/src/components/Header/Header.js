@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, X, Search } from 'lucide-react'
+import { Menu, X, Search, User } from 'lucide-react'
 import avatar from '../../assets/images/ava.webp'
 import cartIcon from '../../assets/images/shopping-cart-one-pink.png'
 import styles from './Header.module.css'
@@ -10,10 +10,16 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const { products } = useSelector(state => state.cart)
   const cartCount = products.reduce((sum, p) => sum + p.count, 0)
-  const user = JSON.parse(localStorage.getItem('user'))
+
+  const storedUser = localStorage.getItem('user')
+  const user = storedUser ? JSON.parse(storedUser) : null
 
   return (
     <header className={styles.header}>
+      <Link to='/' className={styles.logo}>
+        Combucha Shop
+      </Link>
+
       <div className={styles.menuContainer}>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -37,15 +43,17 @@ const Header = () => {
       </div>
 
       {user ? (
-        <Link to='/profile'>
+        <Link to='/profile' className={styles.userLink}>
           <img
             src={user.avatar || avatar}
-            alt={`${user.name || 'User'}'s avatar`}
+            alt={user.name || 'User'}
             className={styles.avatar}
           />
         </Link>
       ) : (
-        <img src={avatar} alt="User's avatar" className={styles.avatar} />
+        <Link to='/login' className={styles.loginLink}>
+          <User size={28} />
+        </Link>
       )}
 
       <div className={styles.rightIcons}>
