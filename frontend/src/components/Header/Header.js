@@ -16,10 +16,6 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Link to='/' className={styles.logo}>
-        Combucha Shop
-      </Link>
-
       <div className={styles.menuContainer}>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -41,22 +37,24 @@ const Header = () => {
           </nav>
         )}
       </div>
-
-      {user ? (
-        <Link to='/profile' className={styles.userLink}>
-          <img
-            src={user.avatar || avatar}
-            alt={user.name || 'User'}
-            className={styles.avatar}
-          />
-        </Link>
-      ) : (
-        <Link to='/login' className={styles.loginLink}>
-          <User size={28} />
-        </Link>
-      )}
+      <Link to='/' className={styles.logo}>
+        Combucha Shop
+      </Link>
 
       <div className={styles.rightIcons}>
+        {user ? (
+          <Link to='/profile' className={styles.userLink}>
+            <img
+              src={user.avatar || avatar}
+              alt={user.name || 'User'}
+              className={styles.avatar}
+            />
+          </Link>
+        ) : (
+          <Link to='/login' className={styles.loginLink}>
+            <User size={28} />
+          </Link>
+        )}
         <Search size={24} className={styles.searchIcon} />
         <Link to='/cart' className={styles.cartWrapper}>
           <img src={cartIcon} alt='Cart' className={styles.cartIcon} />
