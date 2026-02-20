@@ -10,6 +10,7 @@ import InfoSection from '../components/InfoSection/InfoSection.js'
 import BlueSection from '../components/BlueSection/BlueSection.js'
 import TasteText from '../components/TasteText/TasteText.js'
 import Footer from '../components/Footer/Footer.js'
+import ScrollLine from '../components/ScrollLine/ScrollLine.jsx'
 
 function HomePage () {
   const [products, setProducts] = useState([])
@@ -54,7 +55,7 @@ function HomePage () {
   return (
     <div>
       <Header />
-
+      <ScrollLine />
       <HomeIntro />
       <TasteText text='TASTE GOOD' />
       <InfoSection />

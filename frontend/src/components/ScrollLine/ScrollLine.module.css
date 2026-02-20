@@ -1,0 +1,15 @@
+.scrollLine {
+  position: fixed;
+  left: 20px;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .scrollLine {
+    display: none; /*Ховаємо на мобілках */
+  }
+}
