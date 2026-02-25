@@ -1,5 +1,6 @@
 import API_BASE_URL from '../utils/config.js'
 import { useEffect, useState } from 'react'
+import styles from '../assets/styles/HomePage.module.css'
 import Header from '../components/Header/Header.js'
 import Products from '../components/Products/Products'
 import axios from 'axios'
@@ -10,7 +11,6 @@ import InfoSection from '../components/InfoSection/InfoSection.js'
 import BlueSection from '../components/BlueSection/BlueSection.js'
 import TasteText from '../components/TasteText/TasteText.js'
 import Footer from '../components/Footer/Footer.js'
-import ScrollLine from '../components/ScrollLine/ScrollLine.jsx'
 
 function HomePage () {
   const [products, setProducts] = useState([])
@@ -55,12 +55,21 @@ function HomePage () {
   return (
     <div>
       <Header />
-      <ScrollLine />
       <HomeIntro />
       <TasteText text='TASTE GOOD' />
+
       <InfoSection />
 
       <BlueSection />
+
+      <section>
+        <h3 className={styles.section_title}>
+          Look, choose,
+          <br />
+          taste and
+        </h3>
+        <h3 className={styles.section_titleR}> enjoy!</h3>
+      </section>
       <section>
         <Products products={products} variant='home' />
       </section>

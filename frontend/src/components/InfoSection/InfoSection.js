@@ -5,6 +5,7 @@ import Tbottle from '../../assets/images/tbottle.png'
 import KOMBUCHA_about_bg_2 from '../../assets/images/KOMBUCHA_about_bg_2.png'
 import littleBottle from '../../assets/images/01.png'
 import Triple_bottle from '../../assets/images/Triple_bottle-removebg-preview.png'
+import svg from '../../assets/images/Linked Path Group.svg'
 import bottleFruits from '../../assets/images/bottleFruits.png'
 import TimelineItem from '../Timeline/TimelineItem.js'
 import timelineStyles from '../Timeline/Timeline.module.css'
@@ -27,9 +28,14 @@ const InfoSection = () => {
           </p>
           <div className={styles.pics}>
             <img
+              src={svg}
+              alt='Linked Path Group'
+              className={styles.section_line}
+            />
+            <img
               src={Triple_bottle}
               alt='Triple_bottle-removebg-preview'
-              className={styles.picBotton}
+              className={styles.section_lineImg}
             />
           </div>
           <div className={styles.pics}>
