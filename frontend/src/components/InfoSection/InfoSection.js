@@ -14,9 +14,11 @@ const InfoSection = () => {
   return (
     <Section>
       <div>
-        <div className={styles.section}>
+        <div className={styles.sectionWizPos}>
           <h3 className={styles.section_title}>
-            Why you should try OUR KOMBUCHA
+            Why you <br />
+            should try <br />
+            OUR KOMBUCHA
           </h3>
           <img src={Tbottle} alt='3bottle' className={styles.section_Center} />
           <p className={styles.imgLeft_title}>A modern taste from childhood</p>

@@ -35,6 +35,26 @@
 .buttonContainer a button {
   min-width: 150px;
 }
+.sectionTitle {
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-family: 'Bowlby One', arial;
+  font-size: 2rem;
+  color: #343a40;
+  line-height: 1.2;
+}
+
+.sectionTitlePink {
+  font-family: 'Bowlby One', arial;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #343a40;
+  line-height: 1.2;
+  padding-bottom: 24px;
+  color: #fe1468;
+  margin-right: auto;
+  /* padding-left: 1rem; */
+}
 .productsGrid {
   display: grid;
   gap: 20px;
