@@ -4,7 +4,6 @@ import API_BASE_URL from '../../../utils/config'
 
 const MainSlider = ({ product }) => {
   const settings = {
-    // dots: true,
     arrows: false,
     lazyLoad: true,
     infinite: true,
@@ -19,7 +18,7 @@ const MainSlider = ({ product }) => {
     return (
       <div className={styles.mainSliderBack}>
         <div>
-          <img src='./img/placeholder.png' alt='Loading...' />
+          <img src='/placeholder.png' alt='Loading...' />
         </div>
       </div>
     )
@@ -29,11 +28,11 @@ const MainSlider = ({ product }) => {
   const images = []
 
   if (product.image) {
-    images.push(product.image)
+    images.push(product.image.replace(/\\/g, '/'))
   }
 
   if (product.gallery && Array.isArray(product.gallery)) {
-    images.push(...product.gallery)
+    images.push(...product.gallery.map(img => img.replace(/\\/g, '/')))
   }
 
   // Якщо немає зображень, використовуємо placeholder
@@ -50,14 +49,27 @@ const MainSlider = ({ product }) => {
       )}
 
       <Slider {...settings}>
-        {images.map((image, index) => (
-          <div key={index}>
-            <img
-              src={image.startsWith('http') ? image : `${API_BASE_URL}${image}`}
-              alt={`${product.name} - ${index + 1}`}
-            />
-          </div>
-        ))}
+        {images.map((image, index) => {
+          // Placeholder завжди з frontend, решта з бекенду
+          const imageUrl =
+            image === '/placeholder.png'
+              ? '/placeholder.png'
+              : image.startsWith('http')
+              ? image
+              : `${API_BASE_URL}${image}`
+
+          return (
+            <div key={index}>
+              <img
+                src={imageUrl}
+                alt={`${product.name} - ${index + 1}`}
+                onError={e => {
+                  e.target.src = '/placeholder.png'
+                }}
+              />
+            </div>
+          )
+        })}
       </Slider>
     </div>
   )
