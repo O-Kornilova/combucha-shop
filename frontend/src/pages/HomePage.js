@@ -63,14 +63,6 @@ function HomePage () {
       <BlueSection />
 
       <section>
-        <h3 className={styles.section_title}>
-          Look, choose,
-          <br />
-          taste and
-        </h3>
-        <h3 className={styles.section_titleR}> enjoy!</h3>
-      </section>
-      <section>
         <Products products={products} variant='home' />
       </section>
       <FAQ />
