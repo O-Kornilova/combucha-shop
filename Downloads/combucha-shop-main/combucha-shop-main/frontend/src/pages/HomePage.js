@@ -1,5 +1,6 @@
 import API_BASE_URL from '../utils/config.js'
 import { useEffect, useState } from 'react'
+import styles from '../assets/styles/HomePage.module.css'
 import Header from '../components/Header/Header.js'
 import Products from '../components/Products/Products'
 import axios from 'axios'
@@ -22,7 +23,7 @@ function HomePage () {
         setProducts(data)
         setLoading(false)
       } catch (error) {
-        console.error('Ошибка при получении продуктов:', error)
+        console.error('Помилка при отриманні продуктів:', error)
         setLoading(false)
       }
     }
@@ -30,17 +31,37 @@ function HomePage () {
     fetchProducts()
   }, [])
 
-  if (loading) return <p>Загрузка продуктов...</p>
+  if (loading)
+    return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '50vh',
+          gap: '20px'
+        }}
+      >
+        <div className='spinner'></div>
+        <p>Loading products...</p>
+        <p style={{ fontSize: '14px', color: '#666' }}>
+          ⏳ Backend is warming up (free tier) — usually takes 30-60 seconds on
+          first load
+        </p>
+      </div>
+    )
 
   return (
     <div>
       <Header />
-
       <HomeIntro />
       <TasteText text='TASTE GOOD' />
+
       <InfoSection />
 
       <BlueSection />
+
       <section>
         <Products products={products} variant='home' />
       </section>

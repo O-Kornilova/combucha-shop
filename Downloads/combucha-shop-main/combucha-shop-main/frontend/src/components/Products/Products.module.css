@@ -1,3 +1,40 @@
+.main {
+  background: #fcfeff;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-radius: 5%;
+}
+.section_title {
+  font-family: 'Bowlby One', arial;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+.section_titleR {
+  font-family: 'Bowlby One', arial;
+  font-size: 2.5rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: left;
+  color: #fe1468;
+  margin-top: -17px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.buttonContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.buttonContainer button,
+.buttonContainer a button {
+  min-width: 150px;
+}
 .productsGrid {
   display: grid;
   gap: 20px;
