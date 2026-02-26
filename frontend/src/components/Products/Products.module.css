@@ -2,7 +2,7 @@
   background: #fcfeff;
   margin-bottom: 15px;
   padding: 10px 0;
-  border-radius: 5%;
+  border-radius: 10px;
 }
 .section_title {
   font-family: 'Bowlby One', arial;
@@ -26,11 +26,31 @@
 }
 .buttonContainer {
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: 16px;
   justify-content: center;
   margin-top: 32px;
 }
-
+.homeButtonW {
+  color: #fe1468;
+  font-size: 18px;
+  font-weight: 700;
+  width: 169px;
+  height: 48px;
+  background-color: #fcfeff;
+  border-radius: 24px;
+  border: none;
+  z-index: 10;
+  position: relative;
+  border: 2px solid #fe1468;
+}
+.homeButtonW:hover {
+  background-color: #e1125b;
+  color: #fcfeff;
+  transition: all 0.3s ease;
+}
 .buttonContainer button,
 .buttonContainer a button {
   min-width: 150px;

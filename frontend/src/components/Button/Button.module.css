@@ -15,3 +15,19 @@
 .homeButton:hover {
   background-color: #e1125b;
 }
+.homeButtonW {
+  color: #fe1468;
+  font-size: 18px;
+  font-weight: 700;
+  width: 169px;
+  height: 48px;
+  background-color: #fcfeff;
+  border-radius: 24px;
+  border: none;
+  z-index: 10;
+  position: relative;
+}
+.homeButtonW:hover {
+  background-color: #e1125b;
+  color: #fcfeff;
+}

@@ -43,10 +43,14 @@ const Products = ({ products, variant = 'catalog' }) => {
       {isHomePage && (
         <div className={styles.buttonContainer}>
           <Link to='/catalog'>
-            <Button>To Catalog</Button>
+            <Button className={styles.homeButtonW}>To Catalog</Button>
           </Link>
 
-          {hasMore && <Button onClick={loadMore}>Load more</Button>}
+          {hasMore && (
+            <Button onClick={loadMore} className={styles.homeButtonW}>
+              Load more
+            </Button>
+          )}
         </div>
       )}
     </div>
