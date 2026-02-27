@@ -8,7 +8,6 @@ const SmalSlider = ({ products }) => {
   const settings = {
     dots: true,
     arrows: false,
-    lazyLoad: true,
     infinite: true,
     speed: 500,
     slidesToShow: 2,
