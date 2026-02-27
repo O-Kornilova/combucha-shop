@@ -7,6 +7,7 @@ import Delivery from './Delivery/Delivery'
 import SmalSlider from './SmalSlider/SmalSlider'
 import API_BASE_URL from '../../utils/config'
 import styles from './ProductPage.module.css'
+import Footer from '../../components/Footer/Footer'
 /* eslint-disable no-unused-vars */
 
 function ProductPage () {
@@ -82,6 +83,7 @@ function ProductPage () {
       <SaleSelection product={product} />
       <Delivery />
       <SmalSlider products={allProducts.slice(0, 5)} />
+      <Footer />
     </div>
   )
 }

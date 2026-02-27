@@ -92,10 +92,6 @@
   color: #bf0f4e;
 }
 
-.toggle {
-  height: 150px;
-}
-
 .toggle__head {
   background-color: #f0f5fa;
   border-radius: 24px;
@@ -267,6 +263,7 @@
   gap: 5px;
   border-radius: 24px;
   background-color: #fe1468;
+  color: #f0f5fa;
   border: none;
   padding: 14px 16px;
 }
