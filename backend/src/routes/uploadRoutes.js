@@ -21,9 +21,16 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage })
 
-router.post('/multiple', upload.array('images', 10), (req, res) => {
-  const files = req.files.map(file => file.path) // це вже повний https:// URL
-  res.send(files)
+router.post('/multiple', (req, res, next) => {
+  upload.array('images', 10)(req, res, err => {
+    if (err) {
+      console.error('MULTER/CLOUDINARY ERROR:', err)
+      return res.status(500).json({ message: err.message, stack: err.stack })
+    }
+    console.log('FILES:', req.files)
+    const files = req.files.map(file => file.path)
+    res.send(files)
+  })
 })
 
 export default router
