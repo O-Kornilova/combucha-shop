@@ -1,6 +1,5 @@
 import API_BASE_URL from '../utils/config.js'
 import { useEffect, useState } from 'react'
-import styles from '../assets/styles/HomePage.module.css'
 import Header from '../components/Header/Header.js'
 import Products from '../components/Products/Products'
 import axios from 'axios'

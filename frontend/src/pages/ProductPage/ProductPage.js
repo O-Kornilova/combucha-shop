@@ -14,6 +14,20 @@ function ProductPage () {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [allProducts, setAllProducts] = useState([])
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/products`)
+        const data = await res.json()
+        setAllProducts(data)
+      } catch (err) {
+        console.error(err)
+      }
+    }
+    fetchAllProducts()
+  }, [])
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -67,7 +81,7 @@ function ProductPage () {
       <MainSlider product={product} />
       <SaleSelection product={product} />
       <Delivery />
-      <SmalSlider product={product} />
+      <SmalSlider products={allProducts.slice(0, 5)} />
     </div>
   )
 }

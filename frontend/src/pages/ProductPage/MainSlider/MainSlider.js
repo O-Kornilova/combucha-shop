@@ -1,6 +1,5 @@
 import Slider from 'react-slick'
 import styles from './MainSlider.module.css'
-import API_BASE_URL from '../../../utils/config'
 
 const MainSlider = ({ product }) => {
   const settings = {
@@ -13,7 +12,6 @@ const MainSlider = ({ product }) => {
     initialSlide: 0
   }
 
-  // Якщо немає продукта, показуємо заглушку
   if (!product) {
     return (
       <div className={styles.mainSliderBack}>
@@ -24,21 +22,10 @@ const MainSlider = ({ product }) => {
     )
   }
 
-  // Формуємо масив зображень - основне + галерея (якщо є)
-  const images = []
-
-  if (product.image) {
-    images.push(product.image.replace(/\\/g, '/'))
-  }
-
-  if (product.gallery && Array.isArray(product.gallery)) {
-    images.push(...product.gallery.map(img => img.replace(/\\/g, '/')))
-  }
-
-  // Якщо немає зображень, використовуємо placeholder
-  if (images.length === 0) {
-    images.push('/placeholder.png')
-  }
+  const images =
+    product.images && product.images.length > 0
+      ? product.images.map(img => img.url)
+      : ['/placeholder.png']
 
   return (
     <div className={styles.mainSliderBack}>
@@ -49,27 +36,17 @@ const MainSlider = ({ product }) => {
       )}
 
       <Slider {...settings}>
-        {images.map((image, index) => {
-          // Placeholder завжди з frontend, решта з бекенду
-          const imageUrl =
-            image === '/placeholder.png'
-              ? '/placeholder.png'
-              : image.startsWith('http')
-              ? image
-              : `${API_BASE_URL}${image}`
-
-          return (
-            <div key={index}>
-              <img
-                src={imageUrl}
-                alt={`${product.name} - ${index + 1}`}
-                onError={e => {
-                  e.target.src = '/placeholder.png'
-                }}
-              />
-            </div>
-          )
-        })}
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`${product.name} - ${index + 1}`}
+              onError={e => {
+                e.target.src = '/placeholder.png'
+              }}
+            />
+          </div>
+        ))}
       </Slider>
     </div>
   )
