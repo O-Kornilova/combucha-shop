@@ -85,12 +85,10 @@ h2 {
 } */
 
 .image {
-  width: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  max-height: 300px;
-  height: 100%;
+  max-height: 450px;
 }
 
 .title {
@@ -250,4 +248,9 @@ a {
 }
 .sale {
   color: white;
+}
+@media (max-width: 768px) {
+  .image {
+    max-height: 300px;
+  }
 }
