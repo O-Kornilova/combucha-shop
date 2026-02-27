@@ -29,7 +29,7 @@ const MainSlider = ({ product }) => {
 
   return (
     <div className={styles.mainSliderBack}>
-      {product.sale && product.sale > 0 && (
+      {product.sale > 0 && (
         <div className={styles.sale}>
           Sale {Math.round(product.sale * 100)}%
         </div>

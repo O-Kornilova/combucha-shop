@@ -83,7 +83,6 @@ function ProductPage () {
       <SaleSelection product={product} />
       <Delivery />
       <SmalSlider products={allProducts.slice(0, 5)} />
-      <Footer />
     </div>
   )
 }
