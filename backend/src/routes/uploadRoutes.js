@@ -1,7 +1,6 @@
 import express from 'express'
 import multer from 'multer'
 import { v2 as cloudinary } from 'cloudinary'
-import { CloudinaryStorage } from 'multer-storage-cloudinary'
 
 const router = express.Router()
 
@@ -11,26 +10,27 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
-const storage = new CloudinaryStorage({
-  cloudinary,
-  params: {
-    folder: 'kombucha-shop',
-    allowed_formats: ['jpg', 'jpeg', 'png']
+const upload = multer({ storage: multer.memoryStorage() })
+
+router.post('/multiple', upload.array('images', 10), async (req, res) => {
+  try {
+    const uploadPromises = req.files.map(file => {
+      return new Promise((resolve, reject) => {
+        cloudinary.uploader
+          .upload_stream({ folder: 'kombucha-shop' }, (error, result) => {
+            if (error) reject(error)
+            else resolve(result.secure_url)
+          })
+          .end(file.buffer)
+      })
+    })
+
+    const urls = await Promise.all(uploadPromises)
+    res.send(urls)
+  } catch (error) {
+    console.error('Cloudinary upload error:', error)
+    res.status(500).json({ message: error.message })
   }
-})
-
-const upload = multer({ storage })
-
-router.post('/multiple', (req, res, next) => {
-  upload.array('images', 10)(req, res, err => {
-    if (err) {
-      console.error('MULTER/CLOUDINARY ERROR:', err)
-      return res.status(500).json({ message: err.message, stack: err.stack })
-    }
-    console.log('FILES:', req.files)
-    const files = req.files.map(file => file.path)
-    res.send(files)
-  })
 })
 
 export default router
