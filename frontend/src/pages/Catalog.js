@@ -16,7 +16,7 @@ const Catalog = () => {
         setProducts(data)
         setLoading(false)
       } catch (error) {
-        console.error('Ошибка при получении продуктов:', error)
+        console.error('Ой, лишенько, де ж все?:', error)
         setLoading(false)
       }
     }
