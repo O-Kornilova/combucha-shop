@@ -41,11 +41,7 @@ const ProductCard = ({ product }) => {
               )}
             </div>
           )}
-          <img
-            className={styles.image}
-            src={`${API_BASE_URL}${mainImage}`}
-            alt={name}
-          />
+          <img className={styles.image} src={mainImage} alt={name} />
           <div className={styles.applauseMain}>
             <div className={styles.filter}>Rating:</div>
             <div className={styles.applause}>
