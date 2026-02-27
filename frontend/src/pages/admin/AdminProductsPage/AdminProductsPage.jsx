@@ -1,140 +1,140 @@
-import API_BASE_URL from "../../../utils/config";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Button from "../../../components/Button/Button";
-import styles from "./AdminProductsPage.module.css";
+import API_BASE_URL from '../../../utils/config'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import Button from '../../../components/Button/Button'
+import styles from './AdminProductsPage.module.css'
 
-import ProductMainTab from "./tabs/ProductMainTab";
-import ProductImagesTab from "./tabs/ProductImagesTab";
+import ProductMainTab from './tabs/ProductMainTab'
+import ProductImagesTab from './tabs/ProductImagesTab'
 
 // Icons
-import EditIcon from "../../../assets/icons/edit-icon.png";
-import DeleteIcon from "../../../assets/icons/delete-icon.png";
-import ArrowLeftIcon from "../../../assets/icons/arrow-left.png";
+import EditIcon from '../../../assets/icons/edit-icon.png'
+import DeleteIcon from '../../../assets/icons/delete-icon.png'
+import ArrowLeftIcon from '../../../assets/icons/arrow-left.png'
 
-export default function AdminProductsPage() {
-  const [showForm, setShowForm] = useState(false);
+export default function AdminProductsPage () {
+  const [showForm, setShowForm] = useState(false)
   const [form, setForm] = useState({
-    _id: "",
-    name: "",
-    volume: "",
-    price: "",
-    currency: "UAH",
+    _id: '',
+    name: '',
+    volume: '',
+    price: '',
+    currency: 'UAH',
     images: [],
-    taste: "",
-    description: "",
-    countInStock: "",
+    taste: '',
+    description: '',
+    countInStock: '',
     visible: true,
-    sale: 0,
-  });
-  const [uploading, setUploading] = useState(false);
-  const [products, setProducts] = useState([]);
-  const [activeTab, setActiveTab] = useState(0);
+    sale: 0
+  })
+  const [uploading, setUploading] = useState(false)
+  const [products, setProducts] = useState([])
+  const [activeTab, setActiveTab] = useState(0)
 
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem('token')
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(`${API_BASE_URL}/api/products`);
-      setProducts(data);
+      const { data } = await axios.get(`${API_BASE_URL}/api/products`)
+      setProducts(data)
     } catch (error) {
-      console.error(error);
-      alert("❌ Ошибка при загрузке продуктов");
+      console.error(error)
+      alert('❌ Ошибка при загрузке продуктов')
     }
-  };
+  }
 
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    fetchProducts()
+  }, [])
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
   // 🔹 Добавление или редактирование продукта
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = async e => {
+    e.preventDefault()
     try {
       // Формируем payload, где images это массив объектов
       const payload = {
         ...form,
-        images: form.images.map((img) => ({
+        images: form.images.map(img => ({
           url: img.url,
-          isMain: !!img.isMain,
-        })),
-      };
+          isMain: !!img.isMain
+        }))
+      }
 
-      console.log("🔹 Payload для отправки:", payload);
+      console.log('🔹 Payload для отправки:', payload)
 
       if (form._id) {
         await axios.put(`${API_BASE_URL}/api/products/${form._id}`, payload, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        alert("✅ Продукт обновлен!");
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        alert('✅ Продукт обновлен!')
       } else {
         await axios.post(`${API_BASE_URL}/api/products`, payload, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        alert("✅ Продукт добавлен!");
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        alert('✅ Продукт добавлен!')
       }
 
-      setShowForm(false);
+      setShowForm(false)
       setForm({
-        _id: "",
-        name: "",
-        volume: "",
-        price: "",
-        currency: "UAH",
+        _id: '',
+        name: '',
+        volume: '',
+        price: '',
+        currency: 'UAH',
         images: [],
-        taste: "",
-        description: "",
-        countInStock: "",
+        taste: '',
+        description: '',
+        countInStock: '',
         visible: true,
-        sale: 0,
-      });
-      fetchProducts();
+        sale: 0
+      })
+      fetchProducts()
     } catch (error) {
-      console.error(error);
-      alert("❌ Ошибка при сохранении продукта");
+      console.error(error)
+      alert('❌ Ошибка при сохранении продукта')
     }
-  };
+  }
 
-  const deleteHandler = async (id) => {
-    if (window.confirm("Вы уверены, что хотите удалить этот продукт?")) {
+  const deleteHandler = async id => {
+    if (window.confirm('Вы уверены, что хотите удалить этот продукт?')) {
       try {
         await axios.delete(`${API_BASE_URL}/api/products/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        fetchProducts();
-        alert("✅ Продукт удален");
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        fetchProducts()
+        alert('✅ Продукт удален')
       } catch (error) {
-        console.error(error);
-        alert("❌ Ошибка при удалении продукта");
+        console.error(error)
+        alert('❌ Ошибка при удалении продукта')
       }
     }
-  };
+  }
 
-  const editHandler = (product) => {
+  const editHandler = product => {
     setForm({
       ...product,
-      _id: product._id,
-    });
-    setShowForm(true);
-  };
+      _id: product._id
+    })
+    setShowForm(true)
+  }
 
-  const toggleVisibility = async (product) => {
+  const toggleVisibility = async product => {
     try {
       await axios.put(
         `${API_BASE_URL}/api/products/${product._id}`,
         { visible: !product.visible },
         { headers: { Authorization: `Bearer ${token}` } }
-      );
-      fetchProducts();
+      )
+      fetchProducts()
     } catch (error) {
-      console.error(error);
-      alert("❌ Ошибка при изменении видимости");
+      console.error(error)
+      alert('❌ Ошибка при изменении видимости')
     }
-  };
+  }
 
   return (
     <div className={styles.adminContainer}>
@@ -152,7 +152,7 @@ export default function AdminProductsPage() {
             >
               <img
                 src={ArrowLeftIcon}
-                alt="Назад"
+                alt='Назад'
                 className={styles.arrowLeft}
               />
               <span className={styles.buttonText}>Назад</span>
@@ -161,14 +161,14 @@ export default function AdminProductsPage() {
 
           <div className={styles.formContainer}>
             <div className={styles.tabs}>
-              {["Головна", "Фото товару", "Ціна", "Додаткові данні"].map(
+              {['Головна', 'Фото товару', 'Ціна', 'Додаткові данні'].map(
                 (tab, idx) => (
                   <button
                     key={idx}
-                    type="button"
+                    type='button'
                     onClick={() => setActiveTab(idx)}
                     className={`${styles.tab} ${
-                      activeTab === idx ? styles.activeTab : ""
+                      activeTab === idx ? styles.activeTab : ''
                     }`}
                   >
                     {tab}
@@ -192,8 +192,8 @@ export default function AdminProductsPage() {
               {activeTab === 2 && <div>TAB3</div>}
               {activeTab === 3 && <div>TAB4</div>}
 
-              <Button type="submit">
-                {form._id ? "Обновить" : "Зберегти"}
+              <Button type='submit'>
+                {form._id ? 'Обновить' : 'Зберегти'}
               </Button>
             </form>
           </div>
@@ -204,7 +204,7 @@ export default function AdminProductsPage() {
         <div className={styles.table}>
           <div className={styles.tableHeader}>
             <div className={styles.colCheckbox}>
-              <input type="checkbox" />
+              <input type='checkbox' />
             </div>
             <div className={styles.colImage}>Фото</div>
             <div className={styles.colName}>Назва</div>
@@ -214,23 +214,23 @@ export default function AdminProductsPage() {
             <div className={styles.colActions}>Дії</div>
           </div>
 
-          {products.map((p) => (
+          {products.map(p => (
             <div key={p._id} className={styles.tableRow}>
               <div className={styles.colCheckbox}>
-                <input type="checkbox" />
+                <input type='checkbox' />
               </div>
               <div className={styles.colImage}>
                 {p.images && p.images.length > 0 && (
                   <img
-                    src={`${API_BASE_URL}${
-                      p.images.find((img) => img.isMain)?.url || p.images[0].url
-                    }`}
+                    src={
+                      p.images.find(img => img.isMain)?.url || p.images[0].url
+                    }
                     alt={p.name}
                     style={{
-                      width: "64px",
-                      height: "64px",
-                      objectFit: "cover",
-                      background: "linear-gradient(to left, #d9d9d9, #d9d9d9)",
+                      width: '64px',
+                      height: '64px',
+                      objectFit: 'cover',
+                      background: 'linear-gradient(to left, #d9d9d9, #d9d9d9)'
                     }}
                   />
                 )}
@@ -242,7 +242,7 @@ export default function AdminProductsPage() {
               <div className={styles.colCount}>{p.countInStock}</div>
               <div className={styles.colVisible}>
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   checked={p.visible}
                   onChange={() => toggleVisibility(p)}
                 />
@@ -252,13 +252,13 @@ export default function AdminProductsPage() {
                   onClick={() => editHandler(p)}
                   className={styles.iconBtn}
                 >
-                  <img src={EditIcon} alt="Редагувати" />
+                  <img src={EditIcon} alt='Редагувати' />
                 </button>
                 <button
                   onClick={() => deleteHandler(p._id)}
                   className={styles.iconBtn}
                 >
-                  <img src={DeleteIcon} alt="Видалити" />
+                  <img src={DeleteIcon} alt='Видалити' />
                 </button>
               </div>
             </div>
@@ -266,5 +266,5 @@ export default function AdminProductsPage() {
         </div>
       </div>
     </div>
-  );
+  )
 }
