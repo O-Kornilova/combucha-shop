@@ -1,6 +1,8 @@
 import Slider from 'react-slick'
 import ProductCard from '../../../components/ProductCard/ProductCard'
 import styles from './SmalSlider.module.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const SmalSlider = ({ products }) => {
   const settings = {

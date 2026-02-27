@@ -1,4 +1,3 @@
-import API_BASE_URL from '../../utils/config'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addItem } from '../../store/slices/cart/slice'
