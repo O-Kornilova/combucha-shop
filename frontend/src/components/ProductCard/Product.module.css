@@ -13,7 +13,7 @@
   padding: 12px;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 410px);
+  height: 100%;
 }
 a {
   text-decoration: none;
@@ -29,15 +29,11 @@ a {
   background-color: #fcfeff;
   /* margin-bottom: 2rem; */
   width: 100%;
-  box-shadow: 0.0029044048860669136px -0.08501984924077988px 14.166666984558105px -273px
-      #0616220f,
-    -0.5204693675041199px 15.235556602478027px 83.33333587646484px -273px
-      #06162204,
+  box-shadow: 0.0029044048860669136px -0.08501984924077988px 14.166666984558105px -273px #0616220f,
+    -0.5204693675041199px 15.235556602478027px 83.33333587646484px -273px #06162204,
     -1.4272245168685913px 41.77875518798828px 180px -273px #06162200,
-    -2.5744643211364746px 75.3615951538086px 276.6666564941406px -273px
-      #06162200,
-    -3.8192923069000244px 111.80110168457031px 345.8333435058594px -273px
-      #06162200,
+    -2.5744643211364746px 75.3615951538086px 276.6666564941406px -273px #06162200,
+    -3.8192923069000244px 111.80110168457031px 345.8333435058594px -273px #06162200,
     -5.0188117027282715px 146.914306640625px 360px -273px #06162200;
   padding: 25px 22px;
   border-radius: 24px;
@@ -64,7 +60,7 @@ a {
   margin-right: auto;
   /* padding-left: 1rem; */
 }
-h2 {
+.product h2 {
   display: flex;
   justify-content: center;
   font-size: 2rem;
@@ -103,12 +99,7 @@ h2 {
 .card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    #fafbfc 0%,
-    #f5faff 74.97%,
-    #e9edf2 96.39%
-  );
+  background: linear-gradient(180deg, #fafbfc 0%, #f5faff 74.97%, #e9edf2 96.39%);
   border-radius: 24px;
   padding: 1rem;
 }
@@ -131,7 +122,7 @@ h2 {
   color: #868e96;
   font-weight: 400;
 }
-svg {
+.product svg {
   height: 22px;
   margin: 5px;
 }
@@ -229,7 +220,7 @@ svg {
 .buttons_links a button {
   width: 100%;
 }
-a {
+.product a {
   display: block;
 }
 .color {
