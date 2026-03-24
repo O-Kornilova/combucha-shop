@@ -501,45 +501,82 @@ a.sectionBlue_p1 {
   bottom: -9px;
 }
 @media (max-width: 768px) {
+  .sectionBlue {
+    height: auto;
+    min-height: 400px;
+    padding-bottom: 2rem;
+    margin-top: 0;
+  }
+
+  .imgBlue_big {
+    width: 180px;
+    height: 180px;
+    right: 0;
+    top: 60px;
+    opacity: 0.5;
+  }
+
+  .sectionBlue_p1,
+  .sectionBlue_p2,
+  .sectionBlue_p3 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .spot {
+    width: 160px;
+    bottom: -120px;
+  }
+
+  .spot_p {
+    font-size: 18px;
+    bottom: -80px;
+    right: 20px;
+  }
+
+  .spot_arrow {
+    bottom: -80px;
+    right: 100px;
+  }
+
+  .section_titleSec {
+    position: static;
+    font-size: 3rem;
+    color: #fe1468;
+    text-transform: uppercase;
+    padding: 1rem;
+  }
+
+  .sectionFluent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .picBotton {
+    order: -1;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
   .decorativeSvg {
     left: 0;
-    /* width: 36%; */
     height: 38%;
     top: 0;
   }
+
   .decorativeSvg2 {
-    position: absolute;
     left: 21%;
     bottom: -45px;
     height: 27%;
-    pointer-events: none;
-    z-index: 3;
   }
+
   .decorativeSvg3 {
-    position: absolute;
     left: 31px;
     top: 618px;
     height: 49%;
-    z-index: 2;
   }
+
   .section_lineImg {
     width: 60%;
-  }
-  .imgBlue_big {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    right: -12%;
-    top: 152px;
-    z-index: 1;
-  }
-  .spot {
-    width: 246px;
-  }
-  .spot_p {
-    bottom: -50px;
-  }
-  .spot_arrow {
-    bottom: -50px;
   }
 }
