@@ -21,11 +21,11 @@ const ProductCard = ({ product }) => {
 
   const handleAddToCart = e => {
     e.preventDefault()
+    e.stopPropagation()
     dispatch(addItem(product))
   }
 
-  const mainImage =
-    images.find(img => img.isMain)?.url || images[0]?.url || '/placeholder.png'
+  const mainImage = images.find(img => img.isMain)?.url || images[0]?.url || '/placeholder.png'
 
   return (
     <Link to={`/card/${_id}`} className={styles.product}>
@@ -33,11 +33,7 @@ const ProductCard = ({ product }) => {
         <div className={styles.card}>
           {color && (
             <div className={styles.color} style={{ backgroundColor: color }}>
-              {sale > 0 && (
-                <div className={styles.sale}>
-                  SALE -{Math.round(sale * 100)}%
-                </div>
-              )}
+              {sale > 0 && <div className={styles.sale}>SALE -{Math.round(sale * 100)}%</div>}
             </div>
           )}
           <img className={styles.image} src={mainImage} alt={name} />
@@ -56,9 +52,7 @@ const ProductCard = ({ product }) => {
         </div>
         <div className={`${styles.attribute} ${styles.addattribute}`}>
           <div className={styles.filter}>Taste:</div>
-          <div className={styles.filterAtt}>
-            {Array.isArray(taste) ? taste.join(', ') : 'N/A'}
-          </div>
+          <div className={styles.filterAtt}>{Array.isArray(taste) ? taste.join(', ') : 'N/A'}</div>
         </div>
         <div className={styles.info}>
           <div className={styles.prices}>
