@@ -513,7 +513,7 @@ a.sectionBlue_p1 {
     height: 180px;
     right: 0;
     top: 60px;
-    opacity: 0.5;
+    opacity: 1;
   }
 
   .sectionBlue_p1,
@@ -524,19 +524,15 @@ a.sectionBlue_p1 {
   }
 
   .spot {
-    width: 160px;
-    bottom: -120px;
+    display: none;
   }
 
   .spot_p {
-    font-size: 18px;
-    bottom: -80px;
-    right: 20px;
+    display: none;
   }
 
   .spot_arrow {
-    bottom: -80px;
-    right: 100px;
+    display: none;
   }
 
   .section_titleSec {
