@@ -170,6 +170,7 @@ a {
 .info {
   margin-top: auto;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   border-top: 1.6px solid #e9edf2;
@@ -239,6 +240,37 @@ a {
 }
 .sale {
   color: white;
+}
+.addedPopup {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  background-color: #fe1468;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  animation: fadeInOut 2s ease forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @media (max-width: 768px) {
   .image {

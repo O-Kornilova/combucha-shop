@@ -4,6 +4,7 @@ import { addItem } from '../../store/slices/cart/slice'
 import vector from '../../assets/images/vector/Vector.png'
 import styles from './Product.module.css'
 import Button from '../Button/Button'
+import { useState } from 'react'
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch()
@@ -19,10 +20,14 @@ const ProductCard = ({ product }) => {
     color
   } = product
 
+  const [added, setAdded] = useState(false)
+
   const handleAddToCart = e => {
     e.preventDefault()
     e.stopPropagation()
     dispatch(addItem(product))
+    setAdded(true)
+    setTimeout(() => setAdded(false), 2000)
   }
 
   const mainImage = images.find(img => img.isMain)?.url || images[0]?.url || '/placeholder.png'
@@ -66,6 +71,7 @@ const ProductCard = ({ product }) => {
             )}
           </div>
           <Button onClick={handleAddToCart}>Add to cart</Button>
+          {added && <div className={styles.addedPopup}>Added to cart ✓</div>}
         </div>
       </div>
     </Link>
