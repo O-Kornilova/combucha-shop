@@ -10,6 +10,7 @@ import InfoSection from '../components/InfoSection/InfoSection.js'
 import BlueSection from '../components/BlueSection/BlueSection.js'
 import TasteText from '../components/TasteText/TasteText.js'
 import Footer from '../components/Footer/Footer.js'
+import Loader from '../components/Loader'
 
 function HomePage () {
   const [products, setProducts] = useState([])
@@ -30,26 +31,7 @@ function HomePage () {
     fetchProducts()
   }, [])
 
-  if (loading)
-    return (
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '50vh',
-          gap: '20px'
-        }}
-      >
-        <div className='spinner'></div>
-        <p>Loading products...</p>
-        <p style={{ fontSize: '14px', color: '#666' }}>
-          ⏳ Backend is warming up (free tier) — usually takes 30-60 seconds on
-          first load
-        </p>
-      </div>
-    )
+  if (loading) return <Loader message='Завантаження продуктів... / Loading products...' />
 
   return (
     <div>

@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from '../components/Header/Header'
 import Products from '../components/Products/Products'
 import styles from '../assets/styles/Catalog.module.css'
+import Loader from '../components/Loader'
 
 const Catalog = () => {
   const [products, setProducts] = useState([])
@@ -24,7 +25,7 @@ const Catalog = () => {
     fetchProducts()
   }, [])
 
-  if (loading) return <p>Загрузка продуктів...</p>
+  if (loading) return <Loader message='Завантаження продуктів... / Loading products...' />
 
   return (
     <div className={styles.catalogContainer}>
