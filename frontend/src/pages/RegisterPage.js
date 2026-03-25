@@ -25,7 +25,15 @@ export default function RegisterPage () {
       setError('Please enter a valid email')
       return
     }
-    if (password.length < 6) {
+    if (password.trim().length < 6) {
+      setError('Password must be at least 6 characters (no spaces)')
+      return
+    }
+    if (password.includes(' ')) {
+      setError('Password cannot contain spaces')
+      return
+    }
+    if (password.trim().length < 6) {
       setError('Password must be at least 6 characters')
       return
     }
@@ -57,11 +65,7 @@ export default function RegisterPage () {
 
   return (
     <div className={styles.container}>
-      <form
-        onSubmit={handleSubmit}
-        className={styles.form}
-        aria-labelledby='register-title'
-      >
+      <form onSubmit={handleSubmit} className={styles.form} aria-labelledby='register-title'>
         <h2 id='register-title' className={styles.title}>
           Welcome in Kombucha World!
         </h2>
