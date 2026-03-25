@@ -67,7 +67,7 @@ export default function LoginPage () {
         {error && <p className={styles.error}>{error}</p>}
 
         <p>
-          Don't have an account yet? <Link to='/register'>Register</Link>
+          Don&apos;t have an account yet? <Link to='/register'>Register</Link>
         </p>
       </form>
     </div>

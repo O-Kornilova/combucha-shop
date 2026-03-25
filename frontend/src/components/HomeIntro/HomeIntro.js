@@ -37,16 +37,8 @@ const HomeIntro = () => {
       </div>
       <div style={{ position: 'relative' }}>
         <div className={styles.pics}>
-          <img
-            src={Group_1}
-            alt='Опис зображення'
-            className={styles.section_imgHalf}
-          />
-          <img
-            src={Group_2}
-            alt='Опис зображення'
-            className={styles.section_imgHalf}
-          />
+          <img src={Group_1} alt='Опис зображення' className={styles.section_imgHalf} />
+          <img src={Group_2} alt='Опис зображення' className={styles.section_imgHalf} />
         </div>
 
         <div className={styles.section}>
@@ -55,33 +47,20 @@ const HomeIntro = () => {
             kombucha
           </h3>
           <p className={styles.section_text}>
-            Kombucha is a naturally fermented beverage made from tea and sugar.
-            Fermentation results in a special culture of probiotics and enzymes.
+            Kombucha is a naturally fermented beverage made from tea and sugar. Fermentation results
+            in a special culture of probiotics and enzymes.
           </p>
           <div className={styles.position_img}>
-            <img
-              src={Rectangle}
-              alt='Rectangle'
-              className={styles.section_Rectangle}
-            />
+            <img src={Rectangle} alt='Rectangle' className={styles.section_Rectangle} />
           </div>
           <p className={styles.section_textt}>
-            Contains antioxidants that your body will benefit from helps to keep
-            you energized and{' '}
+            Contains antioxidants that your body will benefit from helps to keep you energized and{' '}
             <span className={styles.pink}>fresh after a busy day.</span>
           </p>
         </div>
         <div className={styles.pics2}>
-          <img
-            src={KOMBUCHA}
-            alt='Опис зображення'
-            className={styles.picBotton1}
-          />
-          <img
-            src={pngwing}
-            alt='Опис зображення'
-            className={styles.picBotton2}
-          />
+          <img src={KOMBUCHA} alt='Опис зображення' className={styles.picBotton1} />
+          <img src={pngwing} alt='Опис зображення' className={styles.picBotton2} />
         </div>
         <svg
           className={styles.decorativeSvg}
@@ -93,7 +72,7 @@ const HomeIntro = () => {
           <path
             fillRule='evenodd'
             clipRule='evenodd'
-            d='M157.719 0.138012C156.631 30.5216 150.647 51.4704 141.848 66.4677C131.004 84.9518 115.823 94.4964 99.9824 101.509C94.3634 103.997 88.684 106.157 83.0789 108.289L83.0774 108.289C81.9605 108.714 80.8465 109.138 79.7365 109.563L78.817 111.63C80.3988 111.02 81.9953 110.413 83.6018 109.802L83.6052 109.801C89.2267 107.663 94.9699 105.478 100.63 102.972C116.63 95.8887 132.148 86.1637 143.228 67.2774C152.218 51.955 158.249 30.6694 159.325 0C158.767 0.0486077 158.232 0.0945896 157.719 0.138012ZM49.8361 208.405L49.1087 209.83C54.185 212.572 59.9414 214.73 66.1643 216.456C78.6902 219.929 93.1971 221.674 108.044 222.858C114.942 223.408 121.924 223.838 128.821 224.262L128.822 224.262L130.404 224.359C137.818 224.816 145.118 225.277 152.114 225.887C166.118 227.107 178.831 228.918 188.71 232.449C198.59 235.979 205.482 241.17 208.114 249.054C210.757 256.97 209.193 267.851 201.525 282.966C195.544 294.756 185.892 309.037 171.787 326.365L172.729 326.573C172.113 327.444 172.002 328.043 172.18 328.413C186.79 310.565 196.784 295.85 202.952 283.69C210.688 268.441 212.478 257.073 209.632 248.547C206.774 239.989 199.335 234.546 189.249 230.942C179.162 227.338 166.275 225.515 152.252 224.293C145.234 223.681 137.915 223.219 130.503 222.762L128.926 222.665C122.024 222.241 115.055 221.812 108.171 221.263C93.3474 220.081 78.9651 218.345 66.5918 214.914C60.4243 213.204 54.7786 211.078 49.8361 208.405ZM17.7716  '
+            d='M157.719 0.138012C156.631 30.5216 150.647 51.4704 141.848 66.4677C131.004 84.9518 115.823 94.4964 99.9824 101.509C94.3634 103.997 88.684 106.157 83.0789 108.289L83.0774 108.289C81.9605 108.714 80.8465 109.138 79.7365 109.563L78.817 111.63C80.3988 111.02 81.9953 110.413 83.6018 109.802L83.6052 109.801C89.2267 107.663 94.9699 105.478 100.63 102.972C116.63 95.8887 132.148 86.1637 143.228 67.2774C152.218 51.955 158.249 30.6694 159.325 0C158.767 0.0486077 158.232 0.0945896 157.719 0.138012ZM49.8361 208.405L49.1087 209.83C54.185 212.572 59.9414 214.73 66.1643 216.456C78.6902 219.929 93.1971 221.674 108.044 222.858C114.942 223.408 121.924 223.838 128.821 224.262L128.822 224.262L130.404 224.359C137.818 224.816 145.118 225.277 152.114 225.887C166.118 227.107 178.831 228.918 188.71 232.449C198.59 235.979 205.482 241.17 208.114 249.054C210.757 256.97 209.193 267.851 201.525 282.966C195.544 294.756 185.892 309.037 171.787 326.365L172.729 326.573C172.113 327.444 172.002 328.043 172.18 328.413C186.79 310.565 196.784 295.85 202.952 283.69C210.688 268.441 212.478 257.073 209.632 248.547C206.774 239.989 199.335 234.546 189.249 230.942C179.162 227.338 166.275 225.515 152.252 224.293C145.234 223.681 137.915 223.219 130.503 222.762L128.926 222.665C122.024 222.241 115.055 221.812 108.171 221.263C93.3474 220.081 78.9651 218.345 66.5918 214.914C60.4243 213.204 54.7786 211.078 49.8361 208.405ZM17.7716 497.855C6.72781 507.953 0.898879 518.392 0.0961734 529.082C-0.780151 540.752 4.34892 552.522 14.8013 564.242C21.1141 571.32 29.3965 578.412 39.5408 585.49V583.536C29.9074 576.738 22.0293 569.942 15.9954 563.177C5.70961 551.644 0.859463 540.285 1.69168 529.202C2.48174 518.68 8.40646 508.228 20.0504 497.959L17.7716 497.855Z'
             fill='#FE1468'
           />
         </svg>
@@ -127,16 +106,12 @@ const HomeIntro = () => {
           </h3>
           <Timeline />
           <div>
-            <img
-              src={Flowers}
-              alt='Flowers'
-              className={styles.section_imgLeft}
-            />
+            <img src={Flowers} alt='Flowers' className={styles.section_imgLeft} />
 
             <p className={styles.imgLeft_title}>Kambucha makes your holiday</p>
             <p className={styles.imgLeft_text}>
-              Embrace the Vibrant Holiday Experience with Kambucha's Unmatched
-              Taste, Energy, and Healthy Lifestyle Benefits!
+              Embrace the Vibrant Holiday Experience with Kambucha&apos;s Unmatched Taste, Energy,
+              and Healthy Lifestyle Benefits!
             </p>
           </div>
         </div>
