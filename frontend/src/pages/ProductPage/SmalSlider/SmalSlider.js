@@ -15,7 +15,7 @@ const SmalSlider = ({ products }) => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 480,
         settings: {
           slidesToShow: 1
         }
