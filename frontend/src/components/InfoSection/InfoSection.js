@@ -13,7 +13,7 @@ import timelineStyles from '../Timeline/Timeline.module.css'
 const InfoSection = () => {
   return (
     <Section>
-      <div>
+      <div id='benefits'>
         <div className={styles.sectionWizPos}>
           <h3 className={styles.section_title}>
             Why you <br />
@@ -23,17 +23,12 @@ const InfoSection = () => {
           <img src={Tbottle} alt='3bottle' className={styles.section_Center} />
           <p className={styles.imgLeft_title}>A modern taste from childhood</p>
           <p className={styles.imgLeft_text}>
-            Kombucha is a delicious drink with a unique flavor unlike anything
-            else on the beverage aisle. Try out different varieties to find your
-            sweet spot. With hundreds of craft brewers, there’s a kombucha for
-            everyone.
+            Kombucha is a delicious drink with a unique flavor unlike anything else on the beverage
+            aisle. Try out different varieties to find your sweet spot. With hundreds of craft
+            brewers, there’s a kombucha for everyone.
           </p>
           <div className={styles.pics}>
-            <img
-              src={svg}
-              alt='Linked Path Group'
-              className={styles.section_line}
-            />
+            <img src={svg} alt='Linked Path Group' className={styles.section_line} />
             <img
               src={Triple_bottle}
               alt='Triple_bottle-removebg-preview'
@@ -41,11 +36,7 @@ const InfoSection = () => {
             />
           </div>
           <div className={styles.pics}>
-            <img
-              src={littleBottle}
-              alt='littleBottle'
-              className={styles.picLittleLeft}
-            />
+            <img src={littleBottle} alt='littleBottle' className={styles.picLittleLeft} />
             <TimelineItem
               className={styles.LittleRight}
               title='Unleash the Benefits'
@@ -57,11 +48,7 @@ const InfoSection = () => {
             />
           </div>
         </div>
-        <img
-          src={bottleFruits}
-          alt='bottleFruits'
-          className={styles.picBotton}
-        />{' '}
+        <img src={bottleFruits} alt='bottleFruits' className={styles.picBotton} />{' '}
       </div>
     </Section>
   )

@@ -43,10 +43,12 @@ function HomePage () {
 
       <BlueSection />
 
-      <section>
+      <section id='catalog'>
         <Products products={products} variant='home' />
       </section>
-      <FAQ />
+      <div id='answers'>
+        <FAQ />
+      </div>
       <Feedback />
       <Footer />
     </div>
