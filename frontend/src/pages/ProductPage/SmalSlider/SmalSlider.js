@@ -1,13 +1,12 @@
 import Slider from 'react-slick'
-import { useDispatch } from 'react-redux'
+
 import { Link } from 'react-router-dom'
-import { addItem } from '../../../store/slices/cart/slice'
+
 import styles from './SmalSlider.module.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 const MiniCard = ({ product }) => {
-  const dispatch = useDispatch()
   const { _id, name, images = [], price, currency = 'UAH' } = product
   const mainImage = images.find(img => img.isMain)?.url || images[0]?.url || '/placeholder.png'
 
@@ -15,21 +14,9 @@ const MiniCard = ({ product }) => {
     <Link to={`/card/${_id}`} className={styles.card}>
       <img src={mainImage} alt={name} className={styles.cardImg} />
       <p className={styles.cardName}>{name}</p>
-      <div className={styles.cardBottom}>
-        <span className={styles.cardPrice}>
-          {price} {currency}
-        </span>
-        <button
-          className={styles.cardBtn}
-          onClick={e => {
-            e.preventDefault()
-            e.stopPropagation()
-            dispatch(addItem(product))
-          }}
-        >
-          + Cart
-        </button>
-      </div>
+      <span className={styles.cardPrice}>
+        {price} {currency}
+      </span>
     </Link>
   )
 }

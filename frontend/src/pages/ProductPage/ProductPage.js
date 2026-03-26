@@ -60,9 +60,7 @@ function ProductPage () {
     return (
       <div className={styles.Card_big}>
         <Header />
-        <div style={{ padding: '50px', textAlign: 'center' }}>
-          Error: {error}
-        </div>
+        <div style={{ padding: '50px', textAlign: 'center' }}>Error: {error}</div>
       </div>
     )
 
@@ -70,9 +68,7 @@ function ProductPage () {
     return (
       <div className={styles.Card_big}>
         <Header />
-        <div style={{ padding: '50px', textAlign: 'center' }}>
-          Продукт не знайдений
-        </div>
+        <div style={{ padding: '50px', textAlign: 'center' }}>Продукт не знайдений</div>
       </div>
     )
 
@@ -82,7 +78,7 @@ function ProductPage () {
       <MainSlider product={product} />
       <SaleSelection product={product} />
       <Delivery />
-      <SmalSlider products={allProducts.slice(0, 5)} />
+      <SmalSlider products={allProducts.filter(p => p._id !== id).slice(0, 5)} />
     </div>
   )
 }
