@@ -89,12 +89,15 @@ a {
 
 .title {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   text-decoration: none;
   color: #343a40;
   padding-top: 16px;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card {
   display: flex;
@@ -175,6 +178,8 @@ a {
   justify-content: space-between;
   border-top: 1.6px solid #e9edf2;
   padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .prices {
